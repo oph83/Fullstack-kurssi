@@ -1,0 +1,17 @@
+selain->palvelin HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+palvelin-->selain HTTP 302 Redirect
+selain->palvelin HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+palvelin-->selain html-koodi
+selain->palvelin HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+palvelin-->selain main.css
+selain->palvelin HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+palvelin-->selain main.js
+
+  selain suorittaa js-koodia
+  joka pyytää JSON-datan palvelimelta
+
+selain->palvelin HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+palvelin-->selain data.json
+
+  selain suorittaa tapahtumankäsittelijän
+  joka renderöi muistiinpanot näytölle
